@@ -1,0 +1,371 @@
+/*------------------------------- index.html --------------------------------*/
+
+
+/******** GENERAL *********/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    /*new*/
+    /* overflow-x: hidden; */
+}
+
+body {
+    width: 100vw;
+    height: auto;
+    margin: 0;
+    font-family: Open Sans;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+}
+
+
+/******** header *********/
+
+.color_header,
+.bottom {
+    width: 100vw;
+    height: clamp(80px, 100px, 120px);
+    background-repeat: repeat-x;
+    background-position: contain;
+    text-align: center;
+}
+
+#logo {
+    width: clamp(240px, 30%, 35%);
+    height: 100%;
+}
+
+
+/******** main *********/
+
+#wifi {
+    width: 60px;
+    height: 50px;
+    /* background-image: url("/imgs/Wi-fi.gif"); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0%;
+    margin: 0;
+    padding: 10px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#wifi:focus {
+    border: none;
+    outline-style: none;
+}
+
+h1,
+h5 {
+    font: 800 clamp(1.2rem, 2vw, 2rem) / 1.1 Open Sans;
+}
+
+main>h1 {
+    text-align: center;
+    margin-top: clamp(20px, 10vw, 35px);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+
+/******** infos *********/
+
+.general_info {
+    width: clamp(150px, 20vw, 30vw);
+    display: flex;
+    margin-left: 40px;
+}
+
+.general_info span {
+    font: 400 clamp(1rem, 1.5vw, 2rem) / 1.1 Open Sans;
+}
+
+.general_info h5 {
+    font: 800 clamp(1rem, 1.5vw, 2rem) / 1.1 Open Sans;
+}
+
+
+/******** general of main functions *********/
+
+.father {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 100vw;
+    height: 522px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+/******** mainDivs (printer and SD) *********/
+
+.mainDivs {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: clamp(300px, 45vw, 700px);
+    height: 522px;
+}
+
+
+/******** printer div *********/
+
+#printer_div {
+    padding-top: 20px;
+}
+
+
+/******** image div *********/
+
+#printer_img {
+    /* background-image: url("/imgs/printer.jpg"); */
+}
+
+#printer_img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+}
+
+
+/******** button div *********/
+
+#button_panel {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 15%;
+}
+
+.buttons {
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 90px;
+    height: 35px;
+    background-color: #71998a;
+    border-radius: 6px;
+}
+
+.buttons:hover {
+    background-color: #a6dec9;
+}
+
+
+/******** sd div *********/
+
+
+/******** files div *********/
+
+#files_div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    text-align: left;
+    margin-top: 20%;
+}
+
+#files_div>h5 {
+    font: 800 clamp(1rem, 1.5vw, 2rem) / 1.1 Open Sans;
+    margin-left: 20px;
+}
+
+
+/******** table *********/
+
+#tableFiles {
+    width: 80%;
+    margin: 10px;
+    box-shadow: 0 5px 30px rgb(6, 109, 69);
+    border-spacing: 0;
+    border: 0.5px solid #71998a;
+    text-align: center;
+}
+
+#tableFiles thead {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(13, 112, 20);
+}
+
+#tableFiles thead th {
+    font-weight: bold;
+}
+
+#tableFiles tr td {
+    cursor: pointer;
+}
+
+#tableFiles tr td:first-child {
+    font-weight: bold;
+}
+
+#tableFiles tr td:last-child {
+    width: 92%;
+    text-align: left;
+    padding-left: 15px;
+}
+
+#tableFiles tr:hover td {
+    background-color: rgb(169, 190, 169);
+}
+
+#tableFiles tr.selecionado td {
+    background-color: rgb(96, 129, 98);
+}
+
+tbody,
+thead tr {
+    display: block;
+    width: 100%;
+    border: 0.5px solid #71998a;
+}
+
+tbody {
+    width: 100%;
+    height: 190px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tr>th:first-child,
+tr>td:first-child {
+    width: 50px;
+}
+
+tr>th:last-child,
+tr>td:last-child {
+    width: 150px;
+}
+
+
+/******** button *********/
+
+#buttons_file {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 80%;
+    height: 15%;
+    margin-top: 35px;
+    text-align: center;
+}
+
+
+/******** RESPONSIVE - MOBILE *********/
+
+@media (max-width: 595px) {
+    .mainDivs {
+        width: clamp(250px, 80vw, 700px);
+    }
+    .bottom,
+    .color_header {
+        height: clamp(60px, 80px, 100px);
+    }
+}
+
+
+/*------------------------------- wifi.html --------------------------------*/
+
+
+/* #head {
+    width: 100vw;
+    height: 5vh;
+}
+
+main {
+    width: 100vw;
+}
+
+#border {
+    display: flex;
+    justify-content: center;
+    width: 75vw;
+    height: 600px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 30px;
+    background: linear-gradient(329.54deg, #10f6f6 0%, #0a4753 100%) no-repeat;
+}
+
+#card {
+    box-sizing: border-box;
+    width: 65vw;
+    height: 82%;
+    margin: auto;
+    padding: 4%;
+    border: 2px solid black;
+    border-radius: 30px;
+    background-color: white;
+    font-family: Georgia;
+    font-size: 1rem;
+}
+
+section h1 {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: Georgia;
+    font-size: 1rem;
+}
+
+#content {
+    width: 100%;
+    padding: 2%;
+}
+
+label {
+    display: inline-block;
+    width: max(30%, 150px);
+    vertical-align: middle;
+}
+
+.inputs {
+    width: max(30%, 150px);
+    height: 30px;
+    border: 2px solid black;
+}
+
+.check {
+    transform: scale(2);
+    width: 30px;
+    vertical-align: middle;
+}
+
+#send {
+    width: 100px;
+    height: 30px;
+    display: block;
+    margin: auto;
+    background: linear-gradient(329.54deg, #10f6f6 0%, #0a4753 100%) no-repeat;
+    font-family: Georgia;
+}
+
+#send:hover {
+    background: linear-gradient(329.54deg, #167070 0%, #03252c 100%) no-repeat;
+}
+
+@media (min-width: 1000px) {
+    label {
+        width: 165px;
+    }
+    .inputs {
+        width: 150px;
+    }
+} */

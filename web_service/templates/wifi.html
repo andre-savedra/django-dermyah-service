@@ -1,0 +1,167 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<main class="login">
+    <form class="wifi_panel animation-up" action="{% url 'connect' %}" method="POST">
+        {% csrf_token %}
+        <div id="carouselContent" class="wifi_content carousel slide" data-interval="false">
+
+            <div class="carousel-inner wifi_inner">
+                <div class="carousel-item active">
+                    <div class="wifi_title">
+                        <h2>Configure seu Wifi</h2>
+                    </div>
+                    <div id="files_div">
+                        <div id="file_msg2">
+                            <h5>1- Encontre sua Rede:</h5>                            
+                            <button >
+                                <img src="{% static 'images/search.svg' %}" alt="" style="width:20px; height:20px" >
+                            </button>                                                       
+                        </div>
+                        
+                        <table id="tableFiles">
+                            <thead>
+                                <tr>
+                                    <th id="Id">ID</th>
+                                    <th id="Name">Nome</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for chave, nome_da_rede in nome_das_redes.items %}
+                                <tr>
+                                    <td>{{chave}}</td>
+                                    <td class="nameNetLine">{{nome_da_rede}}</td>
+                                </tr>
+                                <!-- <tr>
+                                    <td>01</td>
+                                    <td class="nameNetLine">Rede1</td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td class="nameNetLine">Rede2</td>
+                                </tr>
+                                <tr>
+                                    <td>03</td>
+                                    <td class="nameNetLine">Rede3</td>
+                                </tr>
+                                <tr>
+                                    <td>04</td>
+                                    <td class="nameNetLine">Rede4</td>
+                                </tr> -->
+                                {%endfor%}
+                            </tbody>
+                        </table>
+
+                        <div class="wifi_buttons_ctrl">
+
+                            <button id="wifi_next_button" href="#carouselContent" role="button" data-slide="next">
+                                Próximo
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="carousel-item">
+                    <div class="wifi_title">
+                        <h2>Configure seu Wifi</h2>
+                    </div>
+                    <div id="files_div">
+                        <div id="file_msg">
+                            <h5>2- Digite a Senha:</h5>
+                        </div>
+                        <div class="wifi_pswd">
+                            <div class="form_content">
+                                <label for="netChoose">Rede Selecionada</label>
+                                <input name="net_ssid" type="text" class="login_input" id="netChoose" placeholder="Rede" style="background-color: rgba(110, 172, 134, 0.294);">
+                            </div>
+                            <div class="form_content">
+                                <label for="pass">Senha</label>
+                                <input name="pswd_ssid" type="password" class="login_input" id="pass" placeholder="Senha min. 8 caracteres">
+                            </div>
+                            <div class="form_content">
+                                <label for="pass">Confirme a Senha</label>
+                                <input name="pswd_ssid2" type="password" class="login_input" id="pass" placeholder="Senha min. 8 caracteres">
+                            </div>
+                        </div>
+
+                        <div class="wifi_buttons_ctrl">
+                            <button id="wifi_prev_button" href="#carouselContent" role="button" data-slide="prev">
+                                Voltar
+                            </button>
+                            <button id="wifi_next_button" href="#carouselContent" role="button" data-slide="next">
+                                Próximo
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+                    <div class="wifi_title">
+                        <h2>Configure seu Wifi</h2>
+                    </div>
+                    <div id="files_div">
+                        <div id="file_msg">
+                            <h5>3- Reinicie sua máquina!:</h5>
+                        </div>
+                        <img id="wifi_machine" src="{% static 'images/panel0.jpg' %}" alt="">
+
+
+                        <div class="wifi_buttons_ctrl">
+                            <button id="wifi_prev_button" href="#carouselContent" role="button" data-slide="prev">
+                                Voltar
+                            </button>
+                            <button id="wifi_next_button" type="submit">
+                                Conectar
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="carousel-item">
+                        <div class="login_title">
+                            <h2>Login3</h2>
+                        </div>
+                        <form class="login_form" onsubmit="loginCheck(this)">
+                            <div class="form_content">
+                                <label for="user">Usuário</label>
+                                <input type="text" class="login_input" id="user" placeholder="Digite seu usuário">
+                            </div>
+                            <div class="form_content">
+                                <label for="pass">Senha</label>
+                                <input type="password" class="login_input" id="pass" placeholder="Digite sua senha">
+                            </div>
+                            <div class="form_button">
+                                <button type="submit" id="login_button">Login</button>
+                            </div>
+                        </form>
+                        <div class="carousel-caption d-none d-md-block">
+                           
+                        </div>
+                    </div> -->
+
+            </div>
+            <!-- <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a> -->
+        </div>
+
+
+    </form>
+
+    <section class="logo_panel">
+
+    </section>
+</main>
+
+{% endblock %}
